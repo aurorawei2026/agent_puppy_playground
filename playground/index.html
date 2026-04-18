@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Small-puppy Playground — Replay Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a class="back" href="../">← Back to off-leash park</a>
+    <h1>🐺🐶🐕‍🦺 Small-puppy Playground</h1>
+    <p class="subtitle">Three puppies, three specialties, one buried bone.</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <div class="canvas-wrap">
+        <canvas id="grid" width="600" height="600"></canvas>
+        <div id="speech-layer"></div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-play">▶ Play</button>
+        <button id="btn-step-back">◀ Step</button>
+        <button id="btn-step">Step ▶</button>
+        <button id="btn-restart">⟲ Restart</button>
+        <label class="speed">
+          Speed
+          <select id="speed">
+            <option value="800">0.5x</option>
+            <option value="400" selected>1x</option>
+            <option value="200">2x</option>
+            <option value="100">4x</option>
+          </select>
+        </label>
+        <input type="range" id="scrubber" min="0" max="0" value="0" />
+        <span id="tick-label">tick 0 / 0</span>
+      </div>
+
+      <div class="meta" id="meta"></div>
+    </section>
+
+    <aside class="memories">
+      <h2>Memories (live)</h2>
+      <div class="memory-cards" id="memory-cards"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>
+      Load a different run by appending <code>?run=run-YYYYMMDD-HHMMSS.json</code>
+      to the URL, or drop a file:
+      <input type="file" id="file-picker" accept=".json" />
+    </p>
+  </footer>
+
+  <script src="viewer.js"></script>
+</body>
+</html>
