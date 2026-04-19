@@ -20,7 +20,7 @@ from typing import TYPE_CHECKING
 from sim.memory import Memory
 
 if TYPE_CHECKING:
-    from sim.brain import Brain
+    from sim.brain import Brain, LlmBrain
     from sim.world import World
 
 
@@ -67,17 +67,22 @@ class Puppy:
         pos: tuple[int, int],
         brain: "Brain",
         rng: random.Random,
+        llm_brain: "LlmBrain | None" = None,
     ) -> None:
         self.name = name
         self.pos = pos
         self.memory = Memory()
-        self.brain = brain
+        self.brain = brain                # chat-only backend (scripted or Claude chat)
+        self.llm_brain = llm_brain        # optional: Claude-as-decider (mode=brain)
         self.rng = rng
         self.world: "World | None" = None
         # Target cell this puppy wants to move toward next (overridable by role)
         self.target: tuple[int, int] | None = None
         # Track last line said to each recipient so we don't spam duplicates.
         self.last_spoken: dict[str, str] = {}
+        # Populated by think() when llm_brain is active; consumed by decide() + speak()
+        # in the same tick, then cleared.
+        self._llm_decision: dict | None = None
 
     # ---------- lifecycle ----------
 
@@ -85,33 +90,98 @@ class Puppy:
         """Role-specific — override in subclass."""
         raise NotImplementedError
 
+    def think(self) -> None:
+        """LLM-brain phase. No-op if this puppy has no LlmBrain.
+
+        Populates self._llm_decision; decide() and speak() consume it.
+        """
+        self._llm_decision = None
+        if self.llm_brain is None:
+            return
+        assert self.world is not None
+        decision = self.llm_brain.decide(self)
+        self._llm_decision = decision
+        if decision.get("thought"):
+            self.memory.think(self.world.tick, decision["thought"])
+
     def decide(self) -> str:
         """Return a short action label (e.g. 'move:right', 'dig', 'stay').
 
-        Default behavior: wander toward target if any, else random step.
+        If an LLM decision is cached for this tick (brain mode), apply it.
+        Otherwise fall back to the rule-based path (possibly overridden by
+        subclasses).
         """
         assert self.world is not None
+        if self._llm_decision is not None:
+            return self._apply_llm_action(self._llm_decision)
+
         if self.target is None or self.pos == self.target:
             self.target = self._pick_wander_target()
 
         action = self._step_toward(self.target)
         return action
 
-    def speak(self) -> list[dict]:
-        """Broadcast one message to each puppy within CHAT_RANGE.
+    def _apply_llm_action(self, decision: dict) -> str:
+        """Apply the move/dig from an LLM decision. Returns an action label."""
+        assert self.world is not None
+        w = self.world
+        dx, dy = decision["move"]
+        actions: list[str] = []
 
-        Each recipient gets its own composition so the puppy can tailor what
-        it says to who it's saying it to. Everyone in range hears everything
-        (there's no whispering in v1).
+        if (dx, dy) != (0, 0):
+            new_pos = (self.pos[0] + dx, self.pos[1] + dy)
+            if w.in_bounds(new_pos):
+                self.pos = new_pos
+                direction = (
+                    "right" if dx > 0 else "left" if dx < 0 else
+                    "down" if dy > 0 else "up"
+                )
+                actions.append(f"move:{direction}")
+
+        if decision.get("dig"):
+            if tuple(self.pos) == tuple(w.bone.pos) and not w.bone.found:
+                w.bone.found = True
+                self.memory.observe(w.tick, "dig", "dug up the bone! 🦴", pos=self.pos)
+                actions.append("dig:success")
+            else:
+                self.memory.observe(w.tick, "dig", "dug — nothing here", pos=self.pos)
+                actions.append("dig:empty")
+
+        return actions[-1] if actions else "stay"
+
+    def speak(self) -> list[dict]:
+        """Broadcast messages to every puppy in chat range.
+
+        In brain mode: the LLM already picked a single recipient + text; we
+        broadcast that text to everyone in chat range (so eavesdropping still
+        works), tagging the 'to' field with the LLM's intended recipient.
+
+        In chat/rules mode: each recipient gets its own tailored composition
+        via self.brain.compose_message().
         """
         assert self.world is not None
         messages: list[dict] = []
-        others = [
+        in_range = [
             p for p in self.world.puppies.values()
             if p is not self and self.world.distance(self.pos, p.pos) <= CHAT_RANGE
         ]
-        others.sort(key=lambda p: self.world.distance(self.pos, p.pos))
-        for recipient in others:
+
+        if self._llm_decision is not None:
+            plan = self._llm_decision.get("speak")
+            if not plan or not in_range:
+                return messages
+            to, text = plan["to"], plan["text"]
+            # Don't re-shout the identical sentence to the same named recipient.
+            if self.last_spoken.get(to) == text:
+                return messages
+            self.last_spoken[to] = text
+            for recipient in in_range:
+                recipient.memory.receive(self.world.tick, self.name, text)
+            messages.append({"from": self.name, "to": to, "text": text})
+            return messages
+
+        in_range.sort(key=lambda p: self.world.distance(self.pos, p.pos))
+        for recipient in in_range:
             text = self.brain.compose_message(sender=self, recipient=recipient)
             if not text:
                 continue
@@ -215,7 +285,8 @@ class Scout(Puppy):
     def decide(self) -> str:
         """If we're holding a hot tip, move toward Digger so we can relay it."""
         assert self.world is not None
-        w = self.world
+        if self._llm_decision is not None:
+            return super().decide()
         if "relay_coord" in self.memory.knowledge:
             digger_pos = self.memory.knowledge.get("last_seen:digger")
             if digger_pos:
@@ -259,6 +330,8 @@ class Sniffer(Puppy):
     def decide(self) -> str:
         """If we smell the bone, home in on it instead of wandering."""
         assert self.world is not None
+        if self._llm_decision is not None:
+            return super().decide()
         w = self.world
         if not w.bone.found and w.distance(self.pos, w.bone.pos) <= SNIFFER_RANGE:
             self.target = w.bone.pos
@@ -304,6 +377,8 @@ class Digger(Puppy):
     def decide(self) -> str:
         """If we've heard a coordinate, head there and dig."""
         assert self.world is not None
+        if self._llm_decision is not None:
+            return super().decide()
         w = self.world
 
         target = None

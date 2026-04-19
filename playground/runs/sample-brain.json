@@ -1,0 +1,4041 @@
+{
+  "meta": {
+    "seed": 7,
+    "difficulty": "easy",
+    "config": {
+      "scout_vision": 9,
+      "sniffer_range": 6,
+      "chat_range": 11
+    },
+    "ticks_run": 11,
+    "grid": [
+      20,
+      20
+    ],
+    "landmarks": {
+      "tree": [
+        5,
+        5
+      ],
+      "water_bowl": [
+        15,
+        15
+      ],
+      "toy_chest": [
+        10,
+        3
+      ],
+      "rock": [
+        3,
+        16
+      ]
+    },
+    "bone_pos": [
+      11,
+      5
+    ],
+    "completed": true,
+    "mode": "brain",
+    "use_llm": true,
+    "llm_fallbacks": 0,
+    "created_at": "2026-04-19T06:09:32.180025Z"
+  },
+  "frames": [
+    {
+      "t": 0,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            2
+          ],
+          "action": "stay",
+          "thought": null,
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {},
+            "thoughts": []
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            17,
+            2
+          ],
+          "action": "stay",
+          "thought": null,
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {},
+            "thoughts": []
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "thought": null,
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {},
+            "thoughts": []
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 1,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            3,
+            3
+          ],
+          "action": "move:right",
+          "thought": "Map the playground by exploring. Move toward the tree landmark to get more visibility.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            16,
+            2
+          ],
+          "action": "move:left",
+          "thought": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage.",
+          "memory": {
+            "observations": [],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              }
+            ],
+            "knowledge": {},
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "thought": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place.",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {},
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "digger",
+          "to": "scout",
+          "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 2,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            4,
+            3
+          ],
+          "action": "move:right",
+          "thought": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            15,
+            3
+          ],
+          "action": "move:left",
+          "thought": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                16,
+                2
+              ],
+              "bone_direction": "southwest"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "thought": "No information yet. Wait for teammates to scout and smell for the bone.",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {},
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "digger",
+          "to": "scout",
+          "text": "Ready to dig! Send coordinates when you find something."
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 3,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            5,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            14,
+            4
+          ],
+          "action": "move:left",
+          "thought": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                15,
+                3
+              ],
+              "bone_direction": "southwest"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "thought": "No information yet. Wait for teammates to scout and locate the bone.",
+          "memory": {
+            "observations": [],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              }
+            ],
+            "knowledge": {},
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Catching faint scent southwest of my position. Moving to track it down!"
+        },
+        {
+          "from": "digger",
+          "to": "scout",
+          "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 4,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            4,
+            5
+          ],
+          "action": "move:left",
+          "thought": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                14,
+                4,
+                4
+              ],
+              "last_seen:digger": [
+                10,
+                10,
+                4
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            13,
+            3
+          ],
+          "action": "move:left",
+          "thought": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1).",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                14,
+                4
+              ],
+              "bone_direction": "southwest"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            11
+          ],
+          "action": "move:left",
+          "thought": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone.",
+          "memory": {
+            "observations": [],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              }
+            ],
+            "knowledge": {},
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Following bone scent southwest from (14, 4)!"
+        },
+        {
+          "from": "digger",
+          "to": "sniffer",
+          "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 5,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            5,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                14,
+                4,
+                4
+              ],
+              "last_seen:digger": [
+                9,
+                11,
+                5
+              ],
+              "relay_coord": [
+                14,
+                4
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            2
+          ],
+          "action": "move:left",
+          "thought": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                13,
+                3
+              ],
+              "bone_direction": "southwest"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "move:right",
+          "thought": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                14,
+                4
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 4
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 6,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            6,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                12,
+                2,
+                6
+              ],
+              "last_seen:digger": [
+                10,
+                10,
+                6
+              ],
+              "relay_coord": [
+                14,
+                4
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            3
+          ],
+          "action": "move:left",
+          "thought": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                12,
+                2
+              ],
+              "bone_direction": "southwest"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            9
+          ],
+          "action": "move:right",
+          "thought": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                14,
+                4
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 4
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Sniffer found bone at (14, 4)! Head that way!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 7,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            7,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 3)",
+                "pos": [
+                  11,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                11,
+                3,
+                7
+              ],
+              "last_seen:digger": [
+                11,
+                9,
+                7
+              ],
+              "relay_coord": [
+                11,
+                3
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            4
+          ],
+          "action": "move:down",
+          "thought": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 7,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                3
+              ],
+              "bone_direction": "south"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              },
+              {
+                "tick": 7,
+                "text": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            8
+          ],
+          "action": "move:up",
+          "thought": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "going to check (11, 3) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                3
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 6
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 8,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            8,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer at (11,3) tracking bone southward. Move closer to relay coordinates and support the search.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 3)",
+                "pos": [
+                  11,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                11,
+                4,
+                8
+              ],
+              "last_seen:digger": [
+                11,
+                8,
+                8
+              ],
+              "relay_coord": [
+                11,
+                3
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer at (11,3) tracking bone southward. Move closer to relay coordinates and support the search."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "move:down",
+          "thought": "Strong smell south at (11, 5). Moving directly toward the scent source.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 7,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 8,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                3
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                11,
+                5
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              },
+              {
+                "tick": 7,
+                "text": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent."
+              },
+              {
+                "tick": 8,
+                "text": "Strong smell south at (11, 5). Moving directly toward the scent source."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            7
+          ],
+          "action": "move:up",
+          "thought": "Sniffer found bone at (11, 3) and is tracking southward. I'm at (11, 8), need to move south to (11, 3) to dig.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "going to check (11, 3) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                3
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 6
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer found bone at (11, 3) and is tracking southward. I'm at (11, 8), need to move south to (11, 3) to dig."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 9,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            9,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer has tracked bone to (11, 5) and is there now. Digger is at (11, 7), close by. I should move closer to support and maintain relay range in case they separate.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 3)",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 5)",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                11,
+                5,
+                9
+              ],
+              "last_seen:digger": [
+                11,
+                7,
+                9
+              ],
+              "relay_coord": [
+                11,
+                5
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer at (11,3) tracking bone southward. Move closer to relay coordinates and support the search."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked bone to (11, 5) and is there now. Digger is at (11, 7), close by. I should move closer to support and maintain relay range in case they separate."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            5
+          ],
+          "action": "move:right",
+          "thought": "Bone scent is strong to the right (east). Moving east to track it closer.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 7,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 8,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                3
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                11,
+                5
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              },
+              {
+                "tick": 7,
+                "text": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent."
+              },
+              {
+                "tick": 8,
+                "text": "Strong smell south at (11, 5). Moving directly toward the scent source."
+              },
+              {
+                "tick": 9,
+                "text": "Bone scent is strong to the right (east). Moving east to track it closer."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            6
+          ],
+          "action": "move:up",
+          "thought": "Sniffer has tracked the bone to (11, 5) and the scent is strong. I'm at (11, 7), need to move south 2 cells to reach the dig location.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "going to check (11, 3) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "going to check (11, 5) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                5
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 8
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer found bone at (11, 3) and is tracking southward. I'm at (11, 8), need to move south to (11, 3) to dig."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked the bone to (11, 5) and the scent is strong. I'm at (11, 7), need to move south 2 cells to reach the dig location."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 10,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            10,
+            4
+          ],
+          "action": "move:right",
+          "thought": "Sniffer tracking bone east from (11, 5). Move closer to support and maintain relay range.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 3)",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 5)",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "Bone scent strongest to my west! Closing in near (11, 5). Moving to (11, 5) now!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                12,
+                5,
+                10
+              ],
+              "last_seen:digger": [
+                11,
+                6,
+                10
+              ],
+              "relay_coord": [
+                11,
+                5
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer at (11,3) tracking bone southward. Move closer to relay coordinates and support the search."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked bone to (11, 5) and is there now. Digger is at (11, 7), close by. I should move closer to support and maintain relay range in case they separate."
+              },
+              {
+                "tick": 10,
+                "text": "Sniffer tracking bone east from (11, 5). Move closer to support and maintain relay range."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "move:left",
+          "thought": "Strong scent to the west at (11,5). Moving west to close in on bone location.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 7,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 8,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the west",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                3
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                11,
+                5
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              },
+              {
+                "tick": 7,
+                "text": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent."
+              },
+              {
+                "tick": 8,
+                "text": "Strong smell south at (11, 5). Moving directly toward the scent source."
+              },
+              {
+                "tick": 9,
+                "text": "Bone scent is strong to the right (east). Moving east to track it closer."
+              },
+              {
+                "tick": 10,
+                "text": "Strong scent to the west at (11,5). Moving west to close in on bone location."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "move:up",
+          "thought": "Sniffer tracked the bone to (11, 5) at tick 8, then moved east. I'm at (11, 6) - need to move south to (11, 5) and dig.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "going to check (11, 3) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "going to check (11, 5) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "Bone scent strongest to my west! Closing in near (11, 5). Moving to (11, 5) now!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                5
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 8
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer found bone at (11, 3) and is tracking southward. I'm at (11, 8), need to move south to (11, 3) to dig."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked the bone to (11, 5) and the scent is strong. I'm at (11, 7), need to move south 2 cells to reach the dig location."
+              },
+              {
+                "tick": 10,
+                "text": "Sniffer tracked the bone to (11, 5) at tick 8, then moved east. I'm at (11, 6) - need to move south to (11, 5) and dig."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Bone scent strongest to my west! Closing in near (11, 5). Moving to (11, 5) now!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 11,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "move:right",
+          "thought": "Sniffer is at (11, 5) tracking bone scent. I'm at (10, 4), close enough to help. Move adjacent to support.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (14, 4)",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 3)",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 5)",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "Bone scent strongest to my west! Closing in near (11, 5). Moving to (11, 5) now!"
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "Bone is here! Come to (12, 5) to dig!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:sniffer": [
+                11,
+                5,
+                11
+              ],
+              "last_seen:digger": [
+                11,
+                5,
+                11
+              ],
+              "relay_coord": [
+                11,
+                5
+              ],
+              "relay_from": "sniffer"
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Map the playground by exploring. Move toward the tree landmark to get more visibility."
+              },
+              {
+                "tick": 2,
+                "text": "Continue mapping the grid systematically. Move right to explore and find more landmarks for the team."
+              },
+              {
+                "tick": 3,
+                "text": "Continue exploring to map more landmarks and find bone. Move toward unexplored areas while staying in chat range."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer caught scent southwest at t=3. I'm at (5,4), need to explore and maintain chat range with digger at (10,10). Move southwest to support sniffer's search."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer found bone at (14, 4). Digger is at (9, 11), out of chat range. I must relay the bone coordinates to Digger."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer found bone at (14, 4). Digger is far at (10, 10). I should move closer to relay position and keep both in range."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer found bone at (11, 3). Digger is at (11, 9), out of chat range. I need to move closer to relay coordinates between them."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer at (11,3) tracking bone southward. Move closer to relay coordinates and support the search."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked bone to (11, 5) and is there now. Digger is at (11, 7), close by. I should move closer to support and maintain relay range in case they separate."
+              },
+              {
+                "tick": 10,
+                "text": "Sniffer tracking bone east from (11, 5). Move closer to support and maintain relay range."
+              },
+              {
+                "tick": 11,
+                "text": "Sniffer is at (11, 5) tracking bone scent. I'm at (10, 4), close enough to help. Move adjacent to support."
+              }
+            ]
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            5
+          ],
+          "action": "move:right",
+          "thought": "Strong scent to the right (east) at my position. Bone likely at (12, 5). Tell Digger to come dig there.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 3,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 4,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 5,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 6,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 7,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 8,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the west",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "digger",
+                "text": "Scout, explore the grid and report landmarks. Sniffer, use your nose to find the bone!"
+              },
+              {
+                "tick": 2,
+                "sender": "digger",
+                "text": "Ready to dig! Send coordinates when you find something."
+              },
+              {
+                "tick": 3,
+                "sender": "digger",
+                "text": "Ready to dig when you find it! Scout ahead and let me know coordinates."
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "digger",
+                "text": "Got it! Moving closer to support you. Keep me posted on the scent trail!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                3
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                11,
+                5
+              ]
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "Starting position at (17, 2). Need to search for bone scent. Will move toward center to maximize search coverage."
+              },
+              {
+                "tick": 2,
+                "text": "Bone scent is faint to southwest. I'll move that direction to get closer and get a stronger scent."
+              },
+              {
+                "tick": 3,
+                "text": "Bone scent is faint southwest of me. Need to move closer to strengthen the scent and pinpoint exact location."
+              },
+              {
+                "tick": 4,
+                "text": "Bone scent is southwest. I'm at (14,4). Moving southwest means going left and down: (-1,-1)."
+              },
+              {
+                "tick": 5,
+                "text": "Scent strengthening southwest. Moving closer to narrow down bone location before reporting coordinates."
+              },
+              {
+                "tick": 6,
+                "text": "Scout reported bone at (14, 4) but my smell says southwest from (12, 2). Moving southwest to verify and get closer to the actual scent."
+              },
+              {
+                "tick": 7,
+                "text": "Scent is medium strength to the south. Scout reported bone at (14, 4) but my smell suggests it's more directly south. Move south to get closer and refine the scent."
+              },
+              {
+                "tick": 8,
+                "text": "Strong smell south at (11, 5). Moving directly toward the scent source."
+              },
+              {
+                "tick": 9,
+                "text": "Bone scent is strong to the right (east). Moving east to track it closer."
+              },
+              {
+                "tick": 10,
+                "text": "Strong scent to the west at (11,5). Moving west to close in on bone location."
+              },
+              {
+                "tick": 11,
+                "text": "Strong scent to the right (east) at my position. Bone likely at (12, 5). Tell Digger to come dig there."
+              }
+            ]
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "dig:success",
+          "thought": "Sniffer says bone is strongest near (11, 5) where I am now. Last message says they're moving here too. Time to dig.",
+          "memory": {
+            "observations": [
+              {
+                "tick": 5,
+                "kind": "hear",
+                "content": "going to check (14, 4) \u2014 heard from sniffer",
+                "pos": [
+                  14,
+                  4
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "hear",
+                "content": "going to check (11, 3) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  3
+                ]
+              },
+              {
+                "tick": 9,
+                "kind": "hear",
+                "content": "going to check (11, 5) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "dig",
+                "content": "dug up the bone! \ud83e\uddb4",
+                "pos": [
+                  11,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 3,
+                "sender": "sniffer",
+                "text": "Catching faint scent southwest of my position. Moving to track it down!"
+              },
+              {
+                "tick": 4,
+                "sender": "scout",
+                "text": "Exploring southwest to help sniffer track the scent. Will relay bone coordinates (x, y) when found!"
+              },
+              {
+                "tick": 4,
+                "sender": "sniffer",
+                "text": "Following bone scent southwest from (14, 4)!"
+              },
+              {
+                "tick": 5,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head there to dig!"
+              },
+              {
+                "tick": 6,
+                "sender": "scout",
+                "text": "Sniffer found bone at (14, 4)! Head that way!"
+              },
+              {
+                "tick": 6,
+                "sender": "sniffer",
+                "text": "Tracking scent southwest. Current position (11, 3), bone smell getting stronger!"
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Digger! Sniffer found the bone at (11, 3)! Moving to support!"
+              },
+              {
+                "tick": 7,
+                "sender": "sniffer",
+                "text": "Tracking strong scent southward from my position. Bone should be nearby, stay ready!"
+              },
+              {
+                "tick": 8,
+                "sender": "scout",
+                "text": "Sniffer tracking bone south from (11, 3). Moving to relay position!"
+              },
+              {
+                "tick": 8,
+                "sender": "sniffer",
+                "text": "Bone scent is strong! I'm tracking it south. Come to (11, 5)!"
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "Bone scent strong to my right! Tracking east from (11, 5)"
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "Bone scent strongest to my west! Closing in near (11, 5). Moving to (11, 5) now!"
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "Bone is here! Come to (12, 5) to dig!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                5
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 8
+            },
+            "thoughts": [
+              {
+                "tick": 1,
+                "text": "First tick, no information yet. Wait for teammates to scout and sniff, stay in place."
+              },
+              {
+                "tick": 2,
+                "text": "No information yet. Wait for teammates to scout and smell for the bone."
+              },
+              {
+                "tick": 3,
+                "text": "No information yet. Wait for teammates to scout and locate the bone."
+              },
+              {
+                "tick": 4,
+                "text": "Sniffer detected a scent southwest of their position at t=3. I should move toward them to be ready to dig when they pinpoint the bone."
+              },
+              {
+                "tick": 5,
+                "text": "Sniffer detected bone scent at (14, 4) and is checking there now. I should move toward that coordinate to be ready to dig when confirmed."
+              },
+              {
+                "tick": 6,
+                "text": "Sniffer confirmed bone at (14, 4). I'm at (10, 10), need to move southeast toward the target."
+              },
+              {
+                "tick": 7,
+                "text": "Sniffer is at (11, 3) and reports bone scent getting stronger. I'm at (11, 9), need to move north to reach (11, 3) for digging."
+              },
+              {
+                "tick": 8,
+                "text": "Sniffer found bone at (11, 3) and is tracking southward. I'm at (11, 8), need to move south to (11, 3) to dig."
+              },
+              {
+                "tick": 9,
+                "text": "Sniffer has tracked the bone to (11, 5) and the scent is strong. I'm at (11, 7), need to move south 2 cells to reach the dig location."
+              },
+              {
+                "tick": 10,
+                "text": "Sniffer tracked the bone to (11, 5) at tick 8, then moved east. I'm at (11, 6) - need to move south to (11, 5) and dig."
+              },
+              {
+                "tick": 11,
+                "text": "Sniffer says bone is strongest near (11, 5) where I am now. Last message says they're moving here too. Time to dig."
+              }
+            ]
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "Bone is here! Come to (12, 5) to dig!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          11,
+          5
+        ],
+        "found": true
+      },
+      "done": true
+    }
+  ]
+}

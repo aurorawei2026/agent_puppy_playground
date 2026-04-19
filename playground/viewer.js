@@ -41,6 +41,7 @@
     bubbles: [],                   // { puppy, text, bornAt (ms) }
     lastAnimatedAt: 0,
     prevMemCounts: { scout: 0, sniffer: 0, digger: 0 },
+    thoughtsOpen: { scout: false, sniffer: false, digger: false },
   };
 
   // ------------------------------------------------------------ DOM
@@ -56,7 +57,7 @@
   const runSelect = $("run-select");
   const inputSeed = $("input-seed");
   const inputTicks = $("input-ticks");
-  const inputLlm = $("input-llm");
+  const inputMode = $("input-mode");
   const cliCommand = $("cli-command");
   const btnCopy = $("btn-copy");
 
@@ -239,16 +240,35 @@
   // ------------------------------------------------------------ speech bubbles
   function spawnBubblesFor(frame) {
     // Bubbles are short-lived DOM nodes anchored above the sender's *canvas* pos.
-    if (!frame.messages) return;
-    for (const m of frame.messages) {
+    if (frame.messages) {
+      for (const m of frame.messages) {
+        const div = document.createElement("div");
+        const senderRole = frame.puppies[m.from]?.role || "scout";
+        div.className = `bubble ${senderRole}`;
+        div.innerHTML = `<div class="who">${m.from} → ${m.to}</div>${escapeHtml(m.text)}`;
+        speechLayer.appendChild(div);
+        state.bubbles.push({
+          el: div,
+          sender: m.from,
+          bornAt: performance.now(),
+        });
+      }
+    }
+
+    // Brain-mode: when a puppy has a thought this tick, float a small 💭
+    // cloud above it. The full text lives in the memory card's Thoughts
+    // section so the canvas stays clean.
+    for (const name of ROLES) {
+      const p = frame.puppies[name];
+      if (!p || !p.thought) continue;
       const div = document.createElement("div");
-      const senderRole = frame.puppies[m.from]?.role || "scout";
-      div.className = `bubble ${senderRole}`;
-      div.innerHTML = `<div class="who">${m.from} → ${m.to}</div>${escapeHtml(m.text)}`;
+      div.className = "thought-indicator";
+      div.title = p.thought;   // accessible/hover-only full text
+      div.textContent = "💭";
       speechLayer.appendChild(div);
       state.bubbles.push({
         el: div,
-        sender: m.from,
+        sender: name,
         bornAt: performance.now(),
       });
     }
@@ -332,15 +352,38 @@
             .join("")}</ul>`
         : `<div class="empty">nothing yet</div>`;
 
+      const thoughts = mem.thoughts || [];
+      const thoughtsHtml = thoughts.length
+        ? `<details class="thoughts-details" ${state.thoughtsOpen[name] ? "open" : ""} data-puppy="${name}">
+             <summary class="section-title clickable">💭 Thoughts (${thoughts.length})</summary>
+             <ul class="thoughts-list">${thoughts
+                .slice(-8)
+                .map(
+                  (t) =>
+                    `<li><span class="t">[t=${t.tick}]</span> <em>${escapeHtml(t.text)}</em></li>`
+                )
+                .join("")}</ul>
+           </details>`
+        : "";
+
       card.innerHTML = `
         <h3>${p.emoji} ${name} <span class="breed">${p.breed}</span></h3>
         <div class="section-title">Observations (${obsCount})</div>
         ${obsHtml}
+        ${thoughtsHtml}
         <div class="section-title">Chat received (${msgCount})</div>
         ${msgHtml}
         <div class="section-title">Knowledge</div>
         ${knowHtml}
       `;
+
+      // Remember open/closed state of the thoughts section across re-renders.
+      const det = card.querySelector("details.thoughts-details");
+      if (det) {
+        det.addEventListener("toggle", () => {
+          state.thoughtsOpen[name] = det.open;
+        });
+      }
 
       if (totalCount > prev) card.classList.add("mem-new");
       else card.classList.remove("mem-new");
@@ -369,12 +412,22 @@
             m.completed ? " (stopped early — bone found)" : ""
           } · `
         : "";
+    const modeLabel =
+      m.mode === "brain"
+        ? '🧠 <b>Claude brain</b> (decides + speaks)'
+        : m.mode === "chat" || (!m.mode && m.use_llm)
+        ? "🗣 Claude chat (rule-based decisions)"
+        : "📜 scripted chat (rule-based decisions)";
+    const fallbacks =
+      m.llm_fallbacks
+        ? ` · <span class="warn">⚠ ${m.llm_fallbacks} LLM fallback${m.llm_fallbacks === 1 ? "" : "s"}</span>`
+        : "";
     metaEl.innerHTML = `
       ${diff}${senses}
       seed <b>${m.seed}</b> ·
       grid <b>${m.grid[0]}×${m.grid[1]}</b> ·
       bone at <b>(${m.bone_pos[0]}, ${m.bone_pos[1]})</b> ·
-      ${ranFor}${m.use_llm ? "Claude-powered chat" : "scripted chat"} ·
+      ${ranFor}${modeLabel}${fallbacks} ·
       ${m.completed ? '<span class="done">✅ bone found</span>' : "in progress"}
     `;
   }
@@ -460,6 +513,9 @@
   runSelect.addEventListener("change", () => {
     state.playing = false;
     $("btn-play").textContent = "▶ Play";
+    // Auto-flip Mode when a mode-specific sample is chosen, so the copy-paste
+    // command matches the flavor the user is actually watching.
+    if (runSelect.value === "sample-brain.json") inputMode.value = "brain";
     loadRunByName(runSelect.value);
     syncCliCommand();
   });
@@ -467,21 +523,24 @@
   // --------- live CLI command builder + copy ---------
   function diffFromFilename(f) {
     const m = f.match(/sample-(easy|medium|hard)\.json/);
-    return m ? m[1] : "medium";
+    if (m) return m[1];
+    // Brain / latest use whatever difficulty the meta says, fall back to medium.
+    return state.run?.meta?.difficulty || "medium";
   }
 
   function syncCliCommand() {
     const diff = diffFromFilename(runSelect.value);
     const seed = Math.max(0, Number(inputSeed.value) || 0);
     const ticks = Math.max(1, Number(inputTicks.value) || 1);
-    const llmFlag = inputLlm.checked ? "" : " --no-llm";
+    const mode = inputMode.value || "chat";
     cliCommand.textContent =
-      `python -m sim.run${llmFlag} --difficulty ${diff} --seed ${seed} --ticks ${ticks}`;
+      `python -m sim.run --mode ${mode} --difficulty ${diff} --seed ${seed} --ticks ${ticks}`;
   }
 
-  [inputSeed, inputTicks, inputLlm].forEach((el) =>
+  [inputSeed, inputTicks, inputMode].forEach((el) =>
     el.addEventListener("input", syncCliCommand)
   );
+  inputMode.addEventListener("change", syncCliCommand);
 
   btnCopy.addEventListener("click", async () => {
     try {

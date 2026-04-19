@@ -253,6 +253,23 @@ main {
 
 .bubble .who { font-weight: 600; font-size: 0.75rem; opacity: 0.7; margin-bottom: 2px; }
 
+/* Minimal thought indicator: just a floating 💭 cloud above the puppy.
+   Full text lives in the memory card's Thoughts section. */
+.thought-indicator {
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1;
+  pointer-events: auto;              /* so the title tooltip works on hover */
+  transform: translate(-50%, -230%);  /* sit well above chat bubbles */
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  animation: thought-pop 220ms ease-out;
+}
+
+@keyframes thought-pop {
+  from { transform: translate(-50%, -210%) scale(0.6); opacity: 0; }
+  to   { transform: translate(-50%, -230%) scale(1);   opacity: 1; }
+}
+
 .controls {
   display: flex;
   align-items: center;
@@ -363,6 +380,43 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);
+}
+
+/* Collapsible Thoughts section — a <details><summary> pair. */
+.card .thoughts-details {
+  margin-top: 6px;
+}
+.card .thoughts-details > summary.section-title {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.card .thoughts-details > summary.section-title::before {
+  content: "▸";
+  font-size: 0.7rem;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.card .thoughts-details[open] > summary.section-title::before {
+  transform: rotate(90deg);
+}
+.card .thoughts-details > summary.section-title:hover {
+  color: var(--fg);
+}
+.card .thoughts-list {
+  color: #5a5550;
+}
+.card .thoughts-list em { font-style: italic; }
+
+/* Warning chip for LLM fallback counts in the meta line. */
+.meta .warn {
+  color: #c67b00;
+  font-weight: 600;
 }
 
 .card ul {

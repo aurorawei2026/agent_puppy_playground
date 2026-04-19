@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Three puppies. Three specialties. One buried bone." />
   <meta name="twitter:image" content="https://aurorawei2026.github.io/agent_puppy_playground/assets/og-image.png" />
 
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <header>
@@ -103,6 +103,7 @@
               <option value="sample-easy.json">Easy — big sense ranges, chatty</option>
               <option value="sample-medium.json" selected>Medium — balanced</option>
               <option value="sample-hard.json">Hard — small ranges, quiet</option>
+              <option value="sample-brain.json">🧠 Claude brain (LLM decides)</option>
               <option value="latest.json">Latest (whatever you last generated)</option>
             </select>
           </label>
@@ -114,9 +115,13 @@
             Max ticks
             <input id="input-ticks" type="number" value="60" min="1" step="1" />
           </label>
-          <label class="check">
-            <input id="input-llm" type="checkbox" />
-            use Claude
+          <label class="num" title="rules = no API calls. chat = Claude writes the puppies' speech. brain = Claude decides AND speaks.">
+            Mode
+            <select id="input-mode">
+              <option value="rules">Rules only (free)</option>
+              <option value="chat" selected>Claude chat</option>
+              <option value="brain">Claude brain</option>
+            </select>
           </label>
         </div>
         <div class="row command-row">
@@ -166,6 +171,6 @@
     </p>
   </footer>
 
-  <script src="viewer.js?v=2"></script>
+  <script src="viewer.js?v=5"></script>
 </body>
 </html>

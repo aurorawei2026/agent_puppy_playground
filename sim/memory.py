@@ -31,16 +31,26 @@ class Message:
 
 
 @dataclass
+class Thought:
+    tick: int
+    text: str
+
+
+@dataclass
 class Memory:
     observations: list[Observation] = field(default_factory=list)
     messages: list[Message] = field(default_factory=list)
     knowledge: dict[str, Any] = field(default_factory=dict)
+    thoughts: list[Thought] = field(default_factory=list)
 
     def observe(self, tick: int, kind: str, content: str, pos: tuple[int, int] | None = None) -> None:
         self.observations.append(Observation(tick=tick, kind=kind, content=content, pos=pos))
 
     def receive(self, tick: int, sender: str, text: str) -> None:
         self.messages.append(Message(tick=tick, sender=sender, text=text))
+
+    def think(self, tick: int, text: str) -> None:
+        self.thoughts.append(Thought(tick=tick, text=text))
 
     def recent_summary(self, window: int = 6) -> str:
         """Short human-readable summary for LLM prompts."""
@@ -59,4 +69,5 @@ class Memory:
             "observations": [asdict(o) for o in self.observations],
             "messages": [asdict(m) for m in self.messages],
             "knowledge": dict(self.knowledge),
+            "thoughts": [asdict(t) for t in self.thoughts],
         }
