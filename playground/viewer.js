@@ -363,12 +363,18 @@
     const senses = m.config
       ? `(vision ${m.config.scout_vision}, smell ${m.config.sniffer_range}, chat ${m.config.chat_range}) · `
       : "";
+    const ranFor =
+      m.ticks_run != null
+        ? `ran <b>${m.ticks_run}</b> tick${m.ticks_run === 1 ? "" : "s"}${
+            m.completed ? " (stopped early — bone found)" : ""
+          } · `
+        : "";
     metaEl.innerHTML = `
       ${diff}${senses}
       seed <b>${m.seed}</b> ·
       grid <b>${m.grid[0]}×${m.grid[1]}</b> ·
       bone at <b>(${m.bone_pos[0]}, ${m.bone_pos[1]})</b> ·
-      ${m.use_llm ? "Claude-powered chat" : "scripted chat"} ·
+      ${ranFor}${m.use_llm ? "Claude-powered chat" : "scripted chat"} ·
       ${m.completed ? '<span class="done">✅ bone found</span>' : "in progress"}
     `;
   }
