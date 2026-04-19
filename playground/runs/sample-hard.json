@@ -1,0 +1,3624 @@
+{
+  "meta": {
+    "seed": 13,
+    "difficulty": "hard",
+    "config": {
+      "scout_vision": 5,
+      "sniffer_range": 3,
+      "chat_range": 5
+    },
+    "ticks_run": 24,
+    "grid": [
+      20,
+      20
+    ],
+    "landmarks": {
+      "tree": [
+        5,
+        5
+      ],
+      "water_bowl": [
+        15,
+        15
+      ],
+      "toy_chest": [
+        10,
+        3
+      ],
+      "rock": [
+        3,
+        16
+      ]
+    },
+    "bone_pos": [
+      9,
+      10
+    ],
+    "completed": true,
+    "use_llm": false,
+    "created_at": "2026-04-19T03:23:39.969685Z"
+  },
+  "frames": [
+    {
+      "t": 0,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            2
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            17,
+            2
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 1,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            3
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            16,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 2,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            4
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            15,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            8,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 3,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            5
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            14,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            7,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 4,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            14,
+            3
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            7,
+            11
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 5,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            13,
+            3
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            6,
+            11
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 6,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            13,
+            4
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            6,
+            12
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 7,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            4
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            12
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Hey digger! I spotted the tree at (5, 5)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 8,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                12,
+                8
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            5
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            11
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 9,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            11
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                11,
+                9
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            5
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            10
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 10,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            12
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                10,
+                10
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            9
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 11,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            13
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            10,
+            6
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            8
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 12,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            14
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            10,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            7
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 13,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            15
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            7
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            6
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 14,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            3,
+            15
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                7
+              ],
+              "bone_direction": "south"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            5,
+            5
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                5,
+                5
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 15,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            3,
+            16
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            6,
+            5
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                8
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 14
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 16,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            4,
+            16
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            6,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                9
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 15
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger! Bone! Dig at (9, 10)!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 17,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            4,
+            17
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            11
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            6,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 18,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            5,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            7,
+            7
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 19,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            6,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            8,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            7,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 20,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            7,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 20,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            8,
+            8
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 21,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            8,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            8,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 20,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 21,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            8,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 22,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            9,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 20,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 21,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 22,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            9
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 23,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            10,
+            17
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 20,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 21,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 22,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 23,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 24,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            10,
+            16
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "last_seen:digger": [
+                5,
+                9,
+                11
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the south",
+                "pos": null
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the north",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 19,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 20,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 21,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 22,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 23,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 24,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the west",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 24,
+                "sender": "digger",
+                "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                9,
+                8
+              ],
+              "bone_direction": "south",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "dig:success",
+          "memory": {
+            "observations": [
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (5, 5) \u2014 heard from scout",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (9, 8) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  8
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 9) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  9
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 24,
+                "kind": "dig",
+                "content": "dug up the bone! \ud83e\uddb4",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the tree at (5, 5)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 8)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the south. I'm at (9, 9)."
+              },
+              {
+                "tick": 16,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 16
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "digger",
+          "to": "sniffer",
+          "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": true
+      },
+      "done": true
+    }
+  ]
+}

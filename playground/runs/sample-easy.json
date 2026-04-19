@@ -1,0 +1,4308 @@
+{
+  "meta": {
+    "seed": 13,
+    "difficulty": "easy",
+    "config": {
+      "scout_vision": 9,
+      "sniffer_range": 6,
+      "chat_range": 11
+    },
+    "ticks_run": 18,
+    "grid": [
+      20,
+      20
+    ],
+    "landmarks": {
+      "tree": [
+        5,
+        5
+      ],
+      "water_bowl": [
+        15,
+        15
+      ],
+      "toy_chest": [
+        10,
+        3
+      ],
+      "rock": [
+        3,
+        16
+      ]
+    },
+    "bone_pos": [
+      9,
+      10
+    ],
+    "completed": true,
+    "use_llm": false,
+    "created_at": "2026-04-19T03:23:39.886608Z"
+  },
+  "frames": [
+    {
+      "t": 0,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            2
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            17,
+            2
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            10
+          ],
+          "action": "stay",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 1,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            3
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            16,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {}
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 2,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            4
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            15,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            9
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 3,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            5
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                9,
+                3
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            14,
+            2
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            8
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 4,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                8,
+                4
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            14,
+            3
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            7
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 5,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                7,
+                5
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            13,
+            3
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            6
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 6,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                6,
+                6
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            13,
+            4
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            5
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 7,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                5,
+                7
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            4
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            4
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                3
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 1
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "Hey digger! I spotted the rock at (3, 16)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 8,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                4,
+                8
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            5
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [],
+            "messages": [],
+            "knowledge": {}
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            5
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                3,
+                16
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 9,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            11
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                5,
+                9
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                12,
+                5
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            6
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                3,
+                16
+              ],
+              "dig_here_source": "scout",
+              "dig_here_tick": 7
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 10,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            12
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                6,
+                10
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            12,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [],
+            "knowledge": {
+              "bone_near": [
+                12,
+                6
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            6
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                12,
+                6
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 9
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 11,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            2,
+            13
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                6,
+                10
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            7
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                12,
+                7
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            6
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                12,
+                7
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 10
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "sniffer",
+          "text": "Hey sniffer! I spotted the rock at (3, 16)."
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+        },
+        {
+          "from": "sniffer",
+          "to": "scout",
+          "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 12,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            3,
+            13
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                6,
+                10
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                11,
+                7
+              ],
+              "relay_from": "sniffer"
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            11,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                7
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            7
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                7
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 11
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+        },
+        {
+          "from": "sniffer",
+          "to": "scout",
+          "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 13,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            3,
+            12
+          ],
+          "action": "move:up",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                6,
+                10
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                11,
+                8
+              ],
+              "relay_from": "sniffer"
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            10,
+            8
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                11,
+                8
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            11,
+            8
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                11,
+                8
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 12
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+        },
+        {
+          "from": "sniffer",
+          "to": "scout",
+          "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 14,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            4,
+            12
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 8)",
+                "pos": [
+                  10,
+                  8
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                11,
+                8,
+                14
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                10,
+                8
+              ],
+              "relay_from": "sniffer",
+              "last_seen:sniffer": [
+                10,
+                8,
+                14
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            10,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                10,
+                8
+              ],
+              "bone_direction": "southwest"
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            8
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "going to check (10, 8) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  8
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                8
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 13
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+        },
+        {
+          "from": "sniffer",
+          "to": "scout",
+          "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 15,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            5,
+            12
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 8)",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 9)",
+                "pos": [
+                  10,
+                  9
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "scout! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                10,
+                8,
+                15
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                10,
+                9
+              ],
+              "relay_from": "sniffer",
+              "last_seen:sniffer": [
+                10,
+                9,
+                15
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            9
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the southwest",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                10,
+                8
+              ],
+              "bone_direction": "southwest",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            10,
+            9
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "going to check (10, 8) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (10, 9) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  9
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 9) \u2014 go dig!"
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                10,
+                9
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 14
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "digger! sniffer says the bone is at (10, 9) \u2014 go dig!"
+        },
+        {
+          "from": "sniffer",
+          "to": "digger",
+          "text": "digger! Bone! Dig at (9, 10)!"
+        },
+        {
+          "from": "sniffer",
+          "to": "scout",
+          "text": "scout! Bone! Dig at (9, 10)!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 16,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            6,
+            12
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 8)",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 9)",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (9, 10)",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "scout! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                10,
+                9,
+                16
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                9,
+                10
+              ],
+              "relay_from": "sniffer",
+              "last_seen:sniffer": [
+                9,
+                9,
+                16
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the southwest",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                10,
+                8
+              ],
+              "bone_direction": "southwest",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            9
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "going to check (10, 8) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (10, 9) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 9) \u2014 go dig!"
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              },
+              {
+                "tick": 16,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (9, 10) \u2014 go dig!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 15
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "digger",
+          "text": "digger! sniffer says the bone is at (9, 10) \u2014 go dig!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 17,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            7,
+            12
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 8)",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 9)",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (9, 10)",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "scout! Bone! Dig at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                9,
+                17
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                9,
+                10
+              ],
+              "relay_from": "sniffer",
+              "last_seen:sniffer": [
+                9,
+                10,
+                17
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            8,
+            10
+          ],
+          "action": "move:left",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the southwest",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                10,
+                8
+              ],
+              "bone_direction": "southwest",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:down",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "going to check (10, 8) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (10, 9) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 9) \u2014 go dig!"
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              },
+              {
+                "tick": 16,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (9, 10) \u2014 go dig!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 15
+            }
+          }
+        }
+      },
+      "messages": [],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": false
+      },
+      "done": false
+    },
+    {
+      "t": 18,
+      "puppies": {
+        "scout": {
+          "role": "scout",
+          "emoji": "\ud83d\udc3a",
+          "breed": "Husky",
+          "pos": [
+            8,
+            12
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted tree at (5, 5)",
+                "pos": [
+                  5,
+                  5
+                ]
+              },
+              {
+                "tick": 1,
+                "kind": "see",
+                "content": "spotted toy_chest at (10, 3)",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 7,
+                "kind": "see",
+                "content": "spotted rock at (3, 16)",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 7)",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (11, 8)",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 8)",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (10, 9)",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "relaying: sniffer says bone at (9, 10)",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "see",
+                "content": "spotted water_bowl at (15, 15)",
+                "pos": [
+                  15,
+                  15
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "scout, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "scout! Bone! Dig at (9, 10)!"
+              },
+              {
+                "tick": 18,
+                "sender": "digger",
+                "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "landmark:tree": [
+                5,
+                5
+              ],
+              "landmark:toy_chest": [
+                10,
+                3
+              ],
+              "last_seen:digger": [
+                9,
+                10,
+                18
+              ],
+              "landmark:rock": [
+                3,
+                16
+              ],
+              "relay_coord": [
+                9,
+                10
+              ],
+              "relay_from": "sniffer",
+              "last_seen:sniffer": [
+                8,
+                10,
+                18
+              ],
+              "landmark:water_bowl": [
+                15,
+                15
+              ]
+            }
+          }
+        },
+        "sniffer": {
+          "role": "sniffer",
+          "emoji": "\ud83d\udc36",
+          "breed": "Beagle",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "move:right",
+          "memory": {
+            "observations": [
+              {
+                "tick": 9,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 10,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 11,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 12,
+                "kind": "smell",
+                "content": "bone scent (faint) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 13,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 14,
+                "kind": "smell",
+                "content": "bone scent (medium) toward the southwest",
+                "pos": null
+              },
+              {
+                "tick": 15,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the southwest",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the south",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 17,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the right here",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "smell",
+                "content": "bone scent (strong) toward the east",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 11,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 18,
+                "sender": "scout",
+                "text": "Hey sniffer! I spotted the water_bowl at (15, 15)."
+              },
+              {
+                "tick": 18,
+                "sender": "digger",
+                "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+              }
+            ],
+            "knowledge": {
+              "bone_near": [
+                10,
+                8
+              ],
+              "bone_direction": "southwest",
+              "bone_exact": [
+                9,
+                10
+              ]
+            }
+          }
+        },
+        "digger": {
+          "role": "digger",
+          "emoji": "\ud83d\udc15\u200d\ud83e\uddba",
+          "breed": "Terrier",
+          "pos": [
+            9,
+            10
+          ],
+          "action": "dig:success",
+          "memory": {
+            "observations": [
+              {
+                "tick": 2,
+                "kind": "hear",
+                "content": "going to check (10, 3) \u2014 heard from scout",
+                "pos": [
+                  10,
+                  3
+                ]
+              },
+              {
+                "tick": 8,
+                "kind": "hear",
+                "content": "going to check (3, 16) \u2014 heard from scout",
+                "pos": [
+                  3,
+                  16
+                ]
+              },
+              {
+                "tick": 10,
+                "kind": "hear",
+                "content": "going to check (12, 6) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  6
+                ]
+              },
+              {
+                "tick": 11,
+                "kind": "hear",
+                "content": "going to check (12, 7) \u2014 heard from sniffer",
+                "pos": [
+                  12,
+                  7
+                ]
+              },
+              {
+                "tick": 12,
+                "kind": "hear",
+                "content": "going to check (11, 7) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  7
+                ]
+              },
+              {
+                "tick": 13,
+                "kind": "hear",
+                "content": "going to check (11, 8) \u2014 heard from sniffer",
+                "pos": [
+                  11,
+                  8
+                ]
+              },
+              {
+                "tick": 14,
+                "kind": "hear",
+                "content": "going to check (10, 8) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  8
+                ]
+              },
+              {
+                "tick": 15,
+                "kind": "hear",
+                "content": "going to check (10, 9) \u2014 heard from sniffer",
+                "pos": [
+                  10,
+                  9
+                ]
+              },
+              {
+                "tick": 16,
+                "kind": "hear",
+                "content": "going to check (9, 10) \u2014 heard from sniffer",
+                "pos": [
+                  9,
+                  10
+                ]
+              },
+              {
+                "tick": 18,
+                "kind": "dig",
+                "content": "dug up the bone! \ud83e\uddb4",
+                "pos": [
+                  9,
+                  10
+                ]
+              }
+            ],
+            "messages": [
+              {
+                "tick": 1,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the toy_chest at (10, 3)."
+              },
+              {
+                "tick": 7,
+                "sender": "scout",
+                "text": "Hey digger! I spotted the rock at (3, 16)."
+              },
+              {
+                "tick": 9,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 6)."
+              },
+              {
+                "tick": 10,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (12, 7)."
+              },
+              {
+                "tick": 11,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 7)."
+              },
+              {
+                "tick": 12,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 7) \u2014 go dig!"
+              },
+              {
+                "tick": 12,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (faint) toward the southwest. I'm at (11, 8)."
+              },
+              {
+                "tick": 13,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (11, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 13,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 8)."
+              },
+              {
+                "tick": 14,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 8) \u2014 go dig!"
+              },
+              {
+                "tick": 14,
+                "sender": "sniffer",
+                "text": "digger, I smell something \u2014 bone scent (medium) toward the southwest. I'm at (10, 9)."
+              },
+              {
+                "tick": 15,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (10, 9) \u2014 go dig!"
+              },
+              {
+                "tick": 15,
+                "sender": "sniffer",
+                "text": "digger! Bone! Dig at (9, 10)!"
+              },
+              {
+                "tick": 16,
+                "sender": "scout",
+                "text": "digger! sniffer says the bone is at (9, 10) \u2014 go dig!"
+              }
+            ],
+            "knowledge": {
+              "dig_here": [
+                9,
+                10
+              ],
+              "dig_here_source": "sniffer",
+              "dig_here_tick": 15
+            }
+          }
+        }
+      },
+      "messages": [
+        {
+          "from": "scout",
+          "to": "sniffer",
+          "text": "Hey sniffer! I spotted the water_bowl at (15, 15)."
+        },
+        {
+          "from": "digger",
+          "to": "sniffer",
+          "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+        },
+        {
+          "from": "digger",
+          "to": "scout",
+          "text": "I got it!! \ud83e\uddb4 Dug it up at (9, 10)!"
+        }
+      ],
+      "bone": {
+        "pos": [
+          9,
+          10
+        ],
+        "found": true
+      },
+      "done": true
+    }
+  ]
+}

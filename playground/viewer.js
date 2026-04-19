@@ -53,6 +53,12 @@
   const metaEl = $("meta");
   const memoryCards = $("memory-cards");
   const filePicker = $("file-picker");
+  const runSelect = $("run-select");
+  const inputSeed = $("input-seed");
+  const inputTicks = $("input-ticks");
+  const inputLlm = $("input-llm");
+  const cliCommand = $("cli-command");
+  const btnCopy = $("btn-copy");
 
   // ------------------------------------------------------------ loading
   async function loadRun(url) {
@@ -72,7 +78,16 @@
     const params = new URLSearchParams(window.location.search);
     const named = params.get("run");
     if (named) return `runs/${named}`;
-    return "runs/latest.json";
+    // Default to whichever run is selected in the dropdown.
+    return `runs/${runSelect.value}`;
+  }
+
+  async function loadRunByName(filename) {
+    const run = await loadRun(`runs/${filename}`);
+    if (run) {
+      clearBubbles();
+      setRun(run);
+    }
   }
 
   function setRun(run) {
@@ -342,11 +357,24 @@
   // ------------------------------------------------------------ HUD / controls
   function renderMeta() {
     const m = state.run.meta;
+    const diff = m.difficulty
+      ? `difficulty <b>${m.difficulty}</b> · `
+      : "";
+    const senses = m.config
+      ? `(vision ${m.config.scout_vision}, smell ${m.config.sniffer_range}, chat ${m.config.chat_range}) · `
+      : "";
+    const ranFor =
+      m.ticks_run != null
+        ? `ran <b>${m.ticks_run}</b> tick${m.ticks_run === 1 ? "" : "s"}${
+            m.completed ? " (stopped early — bone found)" : ""
+          } · `
+        : "";
     metaEl.innerHTML = `
+      ${diff}${senses}
       seed <b>${m.seed}</b> ·
       grid <b>${m.grid[0]}×${m.grid[1]}</b> ·
       bone at <b>(${m.bone_pos[0]}, ${m.bone_pos[1]})</b> ·
-      ${m.use_llm ? "Claude-powered chat" : "scripted chat"} ·
+      ${ranFor}${m.use_llm ? "Claude-powered chat" : "scripted chat"} ·
       ${m.completed ? '<span class="done">✅ bone found</span>' : "in progress"}
     `;
   }
@@ -422,11 +450,63 @@
     if (!file) return;
     try {
       const text = await file.text();
+      clearBubbles();
       setRun(JSON.parse(text));
     } catch (err) {
       metaEl.textContent = `Error parsing file: ${err.message}`;
     }
   });
+
+  runSelect.addEventListener("change", () => {
+    state.playing = false;
+    $("btn-play").textContent = "▶ Play";
+    loadRunByName(runSelect.value);
+    syncCliCommand();
+  });
+
+  // --------- live CLI command builder + copy ---------
+  function diffFromFilename(f) {
+    const m = f.match(/sample-(easy|medium|hard)\.json/);
+    return m ? m[1] : "medium";
+  }
+
+  function syncCliCommand() {
+    const diff = diffFromFilename(runSelect.value);
+    const seed = Math.max(0, Number(inputSeed.value) || 0);
+    const ticks = Math.max(1, Number(inputTicks.value) || 1);
+    const llmFlag = inputLlm.checked ? "" : " --no-llm";
+    cliCommand.textContent =
+      `python -m sim.run${llmFlag} --difficulty ${diff} --seed ${seed} --ticks ${ticks}`;
+  }
+
+  [inputSeed, inputTicks, inputLlm].forEach((el) =>
+    el.addEventListener("input", syncCliCommand)
+  );
+
+  btnCopy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(cliCommand.textContent);
+      btnCopy.textContent = "Copied ✓";
+      btnCopy.classList.add("copied");
+      setTimeout(() => {
+        btnCopy.textContent = "Copy";
+        btnCopy.classList.remove("copied");
+      }, 1400);
+    } catch (e) {
+      // Fallback for older browsers / http contexts
+      const r = document.createRange();
+      r.selectNodeContents(cliCommand);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      document.execCommand("copy");
+      sel.removeAllRanges();
+      btnCopy.textContent = "Copied ✓";
+      setTimeout(() => { btnCopy.textContent = "Copy"; }, 1400);
+    }
+  });
+
+  syncCliCommand();
 
   // ------------------------------------------------------------ utils
   function escapeHtml(s) {
@@ -440,6 +520,15 @@
 
   // ------------------------------------------------------------ boot
   (async function boot() {
+    // If URL has ?run=foo.json and that file matches a dropdown option,
+    // sync the dropdown so the UI stays consistent with the URL.
+    const params = new URLSearchParams(window.location.search);
+    const named = params.get("run");
+    if (named) {
+      const options = Array.from(runSelect.options).map((o) => o.value);
+      if (options.includes(named)) runSelect.value = named;
+    }
+    syncCliCommand();
     const url = pickInitialRunUrl();
     const run = await loadRun(url);
     if (run) setRun(run);

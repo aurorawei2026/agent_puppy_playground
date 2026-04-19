@@ -22,12 +22,22 @@ try:
 except ImportError:
     pass  # dotenv is optional if user exports ANTHROPIC_API_KEY manually
 
+from sim import puppy as puppy_mod
 from sim.brain import Brain
 from sim.puppy import Digger, Scout, Sniffer
 from sim.world import World
 
 
 RUNS_DIR = Path(__file__).resolve().parent.parent / "playground" / "runs"
+
+# Preset sense/chat ranges per difficulty.
+# Lower sense ranges = puppies have to wander more before discovering things,
+# and narrower chat range means Scout's relay role matters more.
+DIFFICULTIES: dict[str, dict[str, int]] = {
+    "easy":   {"scout_vision": 9, "sniffer_range": 6, "chat_range": 11},
+    "medium": {"scout_vision": 7, "sniffer_range": 4, "chat_range": 8},
+    "hard":   {"scout_vision": 5, "sniffer_range": 3, "chat_range": 5},
+}
 
 
 def build_world(seed: int, use_llm: bool) -> World:
@@ -64,7 +74,11 @@ def snapshot_frame(world: World) -> dict:
     }
 
 
-def run(ticks: int, seed: int, use_llm: bool, verbose: bool = True) -> dict:
+def run(ticks: int, seed: int, use_llm: bool, difficulty: str = "medium", verbose: bool = True) -> dict:
+    if difficulty not in DIFFICULTIES:
+        raise ValueError(f"Unknown difficulty '{difficulty}'. Choose one of {list(DIFFICULTIES)}.")
+    config = puppy_mod.configure(**DIFFICULTIES[difficulty])
+
     world = build_world(seed=seed, use_llm=use_llm)
     frames: list[dict] = []
 
@@ -109,6 +123,8 @@ def run(ticks: int, seed: int, use_llm: bool, verbose: bool = True) -> dict:
     return {
         "meta": {
             "seed": seed,
+            "difficulty": difficulty,
+            "config": config,
             "ticks_run": world.tick,
             "grid": [world.width, world.height],
             "landmarks": {k: list(v) for k, v in world.landmarks.items()},
@@ -125,12 +141,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run the puppy playground simulation.")
     parser.add_argument("--ticks", type=int, default=60, help="Max simulation ticks (default 60)")
     parser.add_argument("--seed", type=int, default=42, help="Random seed (default 42)")
+    parser.add_argument("--difficulty", choices=list(DIFFICULTIES.keys()), default="medium",
+                        help="Sense/chat ranges preset (default: medium)")
     parser.add_argument("--no-llm", action="store_true", help="Skip Claude API, use scripted messages")
     parser.add_argument("--quiet", action="store_true", help="Suppress tick-by-tick console output")
     parser.add_argument("--out", type=str, default=None, help="Output JSON path (default: playground/runs/run-<timestamp>.json)")
     args = parser.parse_args()
 
-    result = run(ticks=args.ticks, seed=args.seed, use_llm=not args.no_llm, verbose=not args.quiet)
+    result = run(ticks=args.ticks, seed=args.seed, difficulty=args.difficulty,
+                 use_llm=not args.no_llm, verbose=not args.quiet)
 
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     if args.out:
