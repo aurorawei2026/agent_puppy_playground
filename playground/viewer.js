@@ -54,6 +54,11 @@
   const memoryCards = $("memory-cards");
   const filePicker = $("file-picker");
   const runSelect = $("run-select");
+  const inputSeed = $("input-seed");
+  const inputTicks = $("input-ticks");
+  const inputLlm = $("input-llm");
+  const cliCommand = $("cli-command");
+  const btnCopy = $("btn-copy");
 
   // ------------------------------------------------------------ loading
   async function loadRun(url) {
@@ -450,7 +455,52 @@
     state.playing = false;
     $("btn-play").textContent = "▶ Play";
     loadRunByName(runSelect.value);
+    syncCliCommand();
   });
+
+  // --------- live CLI command builder + copy ---------
+  function diffFromFilename(f) {
+    const m = f.match(/sample-(easy|medium|hard)\.json/);
+    return m ? m[1] : "medium";
+  }
+
+  function syncCliCommand() {
+    const diff = diffFromFilename(runSelect.value);
+    const seed = Math.max(0, Number(inputSeed.value) || 0);
+    const ticks = Math.max(1, Number(inputTicks.value) || 1);
+    const llmFlag = inputLlm.checked ? "" : " --no-llm";
+    cliCommand.textContent =
+      `python -m sim.run${llmFlag} --difficulty ${diff} --seed ${seed} --ticks ${ticks}`;
+  }
+
+  [inputSeed, inputTicks, inputLlm].forEach((el) =>
+    el.addEventListener("input", syncCliCommand)
+  );
+
+  btnCopy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(cliCommand.textContent);
+      btnCopy.textContent = "Copied ✓";
+      btnCopy.classList.add("copied");
+      setTimeout(() => {
+        btnCopy.textContent = "Copy";
+        btnCopy.classList.remove("copied");
+      }, 1400);
+    } catch (e) {
+      // Fallback for older browsers / http contexts
+      const r = document.createRange();
+      r.selectNodeContents(cliCommand);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      document.execCommand("copy");
+      sel.removeAllRanges();
+      btnCopy.textContent = "Copied ✓";
+      setTimeout(() => { btnCopy.textContent = "Copy"; }, 1400);
+    }
+  });
+
+  syncCliCommand();
 
   // ------------------------------------------------------------ utils
   function escapeHtml(s) {
@@ -472,6 +522,7 @@
       const options = Array.from(runSelect.options).map((o) => o.value);
       if (options.includes(named)) runSelect.value = named;
     }
+    syncCliCommand();
     const url = pickInitialRunUrl();
     const run = await loadRun(url);
     if (run) setRun(run);

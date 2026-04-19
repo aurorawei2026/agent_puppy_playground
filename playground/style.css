@@ -119,10 +119,16 @@ header .subtitle {
 
 .run-picker {
   display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.88rem;
+}
+
+.run-picker .row {
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  font-size: 0.88rem;
+  gap: 10px;
 }
 
 .run-picker label {
@@ -132,26 +138,59 @@ header .subtitle {
   color: var(--muted);
 }
 
-.run-picker select {
+.run-picker select,
+.run-picker input[type="number"] {
   font-size: 0.88rem;
   padding: 5px 8px;
   border-radius: 6px;
   border: 1px solid #e2ddd5;
   background: white;
   color: var(--fg);
-  min-width: 260px;
 }
+
+.run-picker select { min-width: 260px; }
+
+.run-picker input[type="number"] {
+  width: 72px;
+  font-variant-numeric: tabular-nums;
+}
+
+.run-picker label.check {
+  gap: 4px;
+  font-size: 0.82rem;
+}
+.run-picker label.check input { margin: 0; }
 
 .run-picker .hint {
   color: var(--muted);
   font-size: 0.78rem;
 }
 
-.run-picker code {
+.run-picker .command-row code {
+  flex: 1;
   background: #efeae1;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-size: 0.82em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #2d4a1a;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.run-picker #btn-copy {
+  background: white;
+  border: 1px solid #e2ddd5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.run-picker #btn-copy:hover { background: #f3efe9; }
+.run-picker #btn-copy.copied {
+  background: #d7ecc1;
+  border-color: #9dca6d;
+  color: #2d4a1a;
 }
 
 main {

@@ -79,16 +79,34 @@
   <main>
     <section class="stage">
       <div class="run-picker">
-        <label>
-          Difficulty
-          <select id="run-select">
-            <option value="sample-easy.json">Easy — big sense ranges, chatty</option>
-            <option value="sample-medium.json" selected>Medium — balanced</option>
-            <option value="sample-hard.json">Hard — small ranges, quiet</option>
-            <option value="latest.json">Latest (whatever you last generated)</option>
-          </select>
-        </label>
-        <span class="hint">or generate your own: <code>python -m sim.run --difficulty hard --seed 42</code></span>
+        <div class="row">
+          <label>
+            Difficulty
+            <select id="run-select">
+              <option value="sample-easy.json">Easy — big sense ranges, chatty</option>
+              <option value="sample-medium.json" selected>Medium — balanced</option>
+              <option value="sample-hard.json">Hard — small ranges, quiet</option>
+              <option value="latest.json">Latest (whatever you last generated)</option>
+            </select>
+          </label>
+          <label class="num">
+            Seed
+            <input id="input-seed" type="number" value="13" min="0" step="1" />
+          </label>
+          <label class="num">
+            Ticks
+            <input id="input-ticks" type="number" value="60" min="1" step="1" />
+          </label>
+          <label class="check">
+            <input id="input-llm" type="checkbox" />
+            use Claude
+          </label>
+        </div>
+        <div class="row command-row">
+          <span class="hint">To run your own:</span>
+          <code id="cli-command">python -m sim.run --no-llm --difficulty medium --seed 13 --ticks 60</code>
+          <button id="btn-copy" type="button">Copy</button>
+        </div>
       </div>
 
       <div class="canvas-wrap">
