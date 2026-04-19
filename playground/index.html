@@ -13,8 +13,84 @@
     <p class="subtitle">Three puppies, three specialties, one buried bone.</p>
   </header>
 
+  <!-- Puppy profile cards: static, role/stat info for each dog. -->
+  <section class="profiles">
+    <div class="profile scout">
+      <div class="profile-head">
+        <span class="profile-emoji">🐺</span>
+        <div>
+          <h3>Scout</h3>
+          <div class="profile-breed">Husky</div>
+        </div>
+      </div>
+      <p class="profile-role">Explorer &amp; communication hub</p>
+      <ul class="profile-stats">
+        <li><b>Vision:</b> 7 cells (widest of the three)</li>
+        <li><b>Smell:</b> none</li>
+        <li><b>Can dig:</b> no</li>
+      </ul>
+      <p class="profile-desc">
+        Maps landmarks, tracks where everyone is, and — crucially — relays
+        Sniffer's bone tip to Digger when they're too far apart to talk.
+      </p>
+    </div>
+
+    <div class="profile sniffer">
+      <div class="profile-head">
+        <span class="profile-emoji">🐶</span>
+        <div>
+          <h3>Sniffer</h3>
+          <div class="profile-breed">Beagle</div>
+        </div>
+      </div>
+      <p class="profile-role">Bone detector</p>
+      <ul class="profile-stats">
+        <li><b>Vision:</b> normal</li>
+        <li><b>Smell:</b> 4 cells (finds the bone)</li>
+        <li><b>Can dig:</b> no</li>
+      </ul>
+      <p class="profile-desc">
+        Wanders until she catches a scent, then homes in. Shouts scent
+        strength and coordinates so the others can come help.
+      </p>
+    </div>
+
+    <div class="profile digger">
+      <div class="profile-head">
+        <span class="profile-emoji">🐕‍🦺</span>
+        <div>
+          <h3>Digger</h3>
+          <div class="profile-breed">Terrier</div>
+        </div>
+      </div>
+      <p class="profile-role">Excavator</p>
+      <ul class="profile-stats">
+        <li><b>Vision:</b> normal</li>
+        <li><b>Smell:</b> none</li>
+        <li><b>Can dig:</b> <b>yes — only him</b></li>
+      </ul>
+      <p class="profile-desc">
+        Listens for coordinates in chat. The only puppy who can actually
+        dig up the bone when he gets there.
+      </p>
+    </div>
+  </section>
+
   <main>
     <section class="stage">
+      <div class="run-picker">
+        <label>
+          Difficulty
+          <select id="run-select">
+            <option value="sample-easy.json">Easy — big sense ranges, chatty</option>
+            <option value="sample-medium.json" selected>Medium — balanced</option>
+            <option value="sample-hard.json">Hard — small ranges, quiet</option>
+            <option value="latest.json">Latest (whatever you last generated)</option>
+          </select>
+        </label>
+        <span class="hint">or generate your own: <code>python -m sim.run --difficulty hard --seed 42</code></span>
+      </div>
+
       <div class="canvas-wrap">
         <canvas id="grid" width="600" height="600"></canvas>
         <div id="speech-layer"></div>

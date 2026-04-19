@@ -49,6 +49,111 @@ header .subtitle {
   font-size: 0.95rem;
 }
 
+/* ------------------ puppy profile cards ------------------ */
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 18px 32px 0;
+}
+
+.profile {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: var(--card-shadow);
+  border-top: 4px solid #ddd;
+}
+
+.profile.scout   { border-top-color: var(--scout); }
+.profile.sniffer { border-top-color: var(--sniffer); }
+.profile.digger  { border-top-color: var(--digger); }
+
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.profile-emoji {
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.profile h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.profile-breed {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.profile-role {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+
+.profile-stats {
+  margin: 6px 0 10px;
+  padding-left: 16px;
+  font-size: 0.82rem;
+  color: var(--fg);
+}
+.profile-stats li { margin-bottom: 2px; }
+
+.profile-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--fg);
+  line-height: 1.45;
+}
+
+/* ------------------ run / difficulty picker ------------------ */
+
+.run-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.run-picker label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.run-picker select {
+  font-size: 0.88rem;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2ddd5;
+  background: white;
+  color: var(--fg);
+  min-width: 260px;
+}
+
+.run-picker .hint {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.run-picker code {
+  background: #efeae1;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.82em;
+}
+
 main {
   display: grid;
   grid-template-columns: minmax(620px, 1fr) 360px;

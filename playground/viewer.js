@@ -53,6 +53,7 @@
   const metaEl = $("meta");
   const memoryCards = $("memory-cards");
   const filePicker = $("file-picker");
+  const runSelect = $("run-select");
 
   // ------------------------------------------------------------ loading
   async function loadRun(url) {
@@ -72,7 +73,16 @@
     const params = new URLSearchParams(window.location.search);
     const named = params.get("run");
     if (named) return `runs/${named}`;
-    return "runs/latest.json";
+    // Default to whichever run is selected in the dropdown.
+    return `runs/${runSelect.value}`;
+  }
+
+  async function loadRunByName(filename) {
+    const run = await loadRun(`runs/${filename}`);
+    if (run) {
+      clearBubbles();
+      setRun(run);
+    }
   }
 
   function setRun(run) {
@@ -342,7 +352,14 @@
   // ------------------------------------------------------------ HUD / controls
   function renderMeta() {
     const m = state.run.meta;
+    const diff = m.difficulty
+      ? `difficulty <b>${m.difficulty}</b> · `
+      : "";
+    const senses = m.config
+      ? `(vision ${m.config.scout_vision}, smell ${m.config.sniffer_range}, chat ${m.config.chat_range}) · `
+      : "";
     metaEl.innerHTML = `
+      ${diff}${senses}
       seed <b>${m.seed}</b> ·
       grid <b>${m.grid[0]}×${m.grid[1]}</b> ·
       bone at <b>(${m.bone_pos[0]}, ${m.bone_pos[1]})</b> ·
@@ -422,10 +439,17 @@
     if (!file) return;
     try {
       const text = await file.text();
+      clearBubbles();
       setRun(JSON.parse(text));
     } catch (err) {
       metaEl.textContent = `Error parsing file: ${err.message}`;
     }
+  });
+
+  runSelect.addEventListener("change", () => {
+    state.playing = false;
+    $("btn-play").textContent = "▶ Play";
+    loadRunByName(runSelect.value);
   });
 
   // ------------------------------------------------------------ utils
@@ -440,6 +464,14 @@
 
   // ------------------------------------------------------------ boot
   (async function boot() {
+    // If URL has ?run=foo.json and that file matches a dropdown option,
+    // sync the dropdown so the UI stays consistent with the URL.
+    const params = new URLSearchParams(window.location.search);
+    const named = params.get("run");
+    if (named) {
+      const options = Array.from(runSelect.options).map((o) => o.value);
+      if (options.includes(named)) runSelect.value = named;
+    }
     const url = pickInitialRunUrl();
     const run = await loadRun(url);
     if (run) setRun(run);

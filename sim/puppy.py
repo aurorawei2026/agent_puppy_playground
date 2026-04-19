@@ -29,6 +29,28 @@ SNIFFER_RANGE = 4      # Sniffer can smell the bone within this radius
 DIGGER_REACH = 0       # Digger has to be on the exact cell to dig
 CHAT_RANGE = 8         # two puppies can hear each other within this radius
 
+
+def configure(*, scout_vision: int | None = None,
+              sniffer_range: int | None = None,
+              chat_range: int | None = None) -> dict:
+    """Override the default sense/chat ranges before building the world.
+
+    Returns the full active config so it can be saved with the run.
+    """
+    global SCOUT_VISION, SNIFFER_RANGE, CHAT_RANGE
+    if scout_vision is not None:
+        SCOUT_VISION = scout_vision
+    if sniffer_range is not None:
+        SNIFFER_RANGE = sniffer_range
+    if chat_range is not None:
+        CHAT_RANGE = chat_range
+    return {
+        "scout_vision": SCOUT_VISION,
+        "sniffer_range": SNIFFER_RANGE,
+        "chat_range": CHAT_RANGE,
+    }
+
+
 # Extracts coordinate hints like "(4, 1)" from chat messages so Digger can learn
 # where to dig *only from language*, not from reading other puppies' memory.
 POS_RE = re.compile(r"\((\d+)\s*,\s*(\d+)\)")
