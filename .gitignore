@@ -12,9 +12,11 @@ venv/
 .pytest_cache/
 *.egg-info/
 
-# Simulation output (generated, can be large)
+# Simulation output: ignore timestamped runs (they can be large),
+# but keep latest.json so the deployed viewer has a demo run to load.
 playground/runs/*.json
 !playground/runs/.gitkeep
+!playground/runs/latest.json
 
 # OS
 .DS_Store
